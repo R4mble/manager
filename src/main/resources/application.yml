@@ -1,0 +1,9 @@
+server:
+  port: 5221
+
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/test
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 1234
