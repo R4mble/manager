@@ -1,6 +1,6 @@
 package cn.manager.mapper;
 
-import cn.manager.model.User;
+import cn.manager.entity.User;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Param;
 

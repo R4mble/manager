@@ -1,6 +1,6 @@
 package cn.manager.controller;
 
-import cn.manager.model.User;
+import cn.manager.entity.User;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationToken;

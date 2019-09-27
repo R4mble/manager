@@ -1,4 +1,4 @@
-package cn.manager.model;
+package cn.manager.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
@@ -6,7 +6,6 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
-import javax.validation.constraints.NotBlank;
 import java.util.Date;
 
 /**
@@ -14,19 +13,27 @@ import java.util.Date;
  * @date 2019/9/26
  */
 @Data
-@TableName("role")
-public class Role {
+@TableName("menu")
+public class Menu {
 
     @TableId(value = "id", type = IdType.AUTO)
-    private Long id;
+    private Integer id;
 
-    @TableField(value = "name")
-    @NotBlank(message = "{required}")
+    @TableField("parent_id")
+    private Integer parentId;
+
+    @TableField("name")
     private String name;
 
-    @TableField(value = "description")
-    private String description;
+    @TableField("url")
+    private String url;
 
-    @TableField(value = "create_time")
+    @TableField("perm")
+    private String perm;
+
+    @TableField("icon")
+    private String icon;
+
+    @TableField("create_time")
     private Date createTime;
 }

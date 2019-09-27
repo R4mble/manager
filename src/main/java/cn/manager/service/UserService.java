@@ -1,7 +1,7 @@
 package cn.manager.service;
 
 import cn.manager.mapper.UserMapper;
-import cn.manager.model.User;
+import cn.manager.entity.User;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
@@ -12,4 +12,10 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserService extends ServiceImpl<UserMapper, User> {
 
+    public User findByName(String name) {
+        return baseMapper.findByName(name);
+    }
+
+    public void register(String name, String password) {
+    }
 }
