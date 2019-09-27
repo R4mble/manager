@@ -18,4 +18,8 @@ public class VocaService extends ServiceImpl<VocaMapper, Voca> {
     public void insert(Voca voca) {
         baseMapper.insert(voca);
     }
+
+    public Voca get(Long id) {
+        return baseMapper.selectById(id);
+    }
 }
