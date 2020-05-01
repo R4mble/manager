@@ -1,6 +1,6 @@
 package cn.manager.controller;
 
-import cn.manager.entity.ResponseModel;
+import cn.manager.model.ResponseModel;
 import cn.manager.service.UserService;
 import cn.manager.util.MD5Util;
 import org.apache.shiro.authc.UsernamePasswordToken;

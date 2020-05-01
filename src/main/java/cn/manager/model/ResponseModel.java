@@ -1,4 +1,4 @@
-package cn.manager.entity;
+package cn.manager.model;
 
 import java.util.HashMap;
 
@@ -9,4 +9,11 @@ import java.util.HashMap;
 
 public class ResponseModel extends HashMap<String, Object> {
 
+    public ResponseModel(Object res) {
+        put("res", res);
+    }
+
+    public ResponseModel() {
+
+    }
 }

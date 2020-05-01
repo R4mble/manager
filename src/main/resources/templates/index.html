@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        const print = console.log
+        window.onload =function() {
+            $("#add").bind("click", () => $.ajax({
+                type: "POST",
+                url: "http://127.0.0.1:5221/voca",
+                contentType: 'application/json',
+                data:
+                JSON.stringify(
+                    {
+                        userId: $("#userId").val(),
+                        content: $("#content").val(),
+                        chinese: $("#chinese").val(),
+                        phonetic: $("#phonetic").val(),
+                        sentence: $("#sentence").val()
+                    })
+            }))
+
+            $("#list").bind("click", () => $.ajax({
+                type: "GET",
+                url: "http://127.0.0.1:5221/voca/list?userId=" + $("#userId").val(),
+                success: function (data) {
+                    $('#resText').empty();
+                    var html = '';
+                    $.each(data.res, function(index, res){
+                        res2 = JSON.stringify(res)
+                        html += res2
+                        html += "<br><br>"
+                    });
+                    $('#resText').html(html);
+                }
+            }))
+        }
+    </script>
+</head>
+<body>
+
+<label>
+    <input id="userId" placeholder="id" value="5221">
+</label>
+
+<label>
+    <input id="content" placeholder="单词">
+</label>
+
+<label>
+    <input id="chinese" placeholder="解释">
+</label>
+
+<label>
+    <input id="phonetic" placeholder="音标">
+</label>
+
+<label>
+    <input id="sentence" placeholder="例句">
+</label>
+
+<button id="add">新增单词</button>
+
+<br>
+
+<button id="list">查看我的所有单词</button>
+
+<div id="resText"></div>
+</body>
+
+
+</html>
